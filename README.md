@@ -1,6 +1,6 @@
 # RST-MAG-Programiranje_HanoiTowers
 
-| Type of hanoi tower | Disk number | Time needed to complete asynchronous| max RAM|
+| Type of hanoi tower | Disk number | Time needed to complete asynchronous| max RAM |
 | K13_01 | 14 | --- | Time needed to complete |
 | K13_12 | 12 | 283 | Time needed to complete |
 | K13e_01 | 11 | --- | Time needed to complete |
