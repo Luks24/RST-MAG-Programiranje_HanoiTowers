@@ -34,9 +34,6 @@ namespace HanoiTowersLukaKidric
         private HashSet<long> setCurrent;
         private Queue<long> setNew;
         private byte[] stateArray;
-        private bool[] canMoveArray;
-        private byte[] newState;
-        private long currentState;
         private short currentDistance;
 
         public HanoiTowerSelection(int numDiscs, int numPegs, HanoiType type)
@@ -84,7 +81,7 @@ namespace HanoiTowersLukaKidric
 
             // For each disc we have its peg
             stateArray = new byte[this.numDiscs];
-            canMoveArray = new bool[this.numPegs];
+            //canMoveArray = new bool[this.numPegs];
 
             setIgnore = new HashSet<long>();
             setPrev = new HashSet<long>();
@@ -194,41 +191,41 @@ namespace HanoiTowersLukaKidric
                     switch (type)
                     {
                         case HanoiType.K13_01:
-                             {
-                                 bool toBreak = false;
-                                 setCurrent.AsParallel().WithDegreeOfParallelism(5).ForAll(num =>  // Znotraj i-tega premika preveri vsa možn stanja in se premaknemo v vse možne pozicije
-                                 {
-                                     if (num == finalState)
-                                     {
-                                         toBreak = true;
-                                     }
+                            {
+                                bool toBreak = false;
+                                setCurrent.AsParallel().WithDegreeOfParallelism(5).ForAll(num =>  // Znotraj i-tega premika preveri vsa možn stanja in se premaknemo v vse možne pozicije
+                                {
+                                    if (num == finalState)
+                                    {
+                                        toBreak = true;
+                                    }
 
-                                     byte[] tmpState = LongToState(num);
-                                     MakeMoveForSmallDimension_K13_01_Fast(tmpState);
+                                    byte[] tmpState = LongToState(num);
+                                    MakeMoveForSmallDimension_K13_01_Fast(tmpState);
 
-                                 });
+                                });
 
-                                 if (toBreak) return currentDistance;
-                             }
-                             break;
-                        /*  case HanoiType.K13_12:
-                             {
-                                 bool toBreak = false;
-                                 setCurrent.AsParallel().WithDegreeOfParallelism(5).ForAll(num =>  // Znotraj i-tega premika preveri vsa možn stanja in se premaknemo v vse možne pozicije
-                                 {
-                                     if (num == finalState)
-                                     {
-                                         toBreak = true;
-                                     }
+                                if (toBreak) return currentDistance;
+                            }
+                            break;
+                        case HanoiType.K13_12:
+                            {
+                                bool toBreak = false;
+                                setCurrent.AsParallel().WithDegreeOfParallelism(5).ForAll(num =>  // Znotraj i-tega premika preveri vsa možn stanja in se premaknemo v vse možne pozicije
+                                {
+                                    if (num == finalState)
+                                    {
+                                        toBreak = true;
+                                    }
 
-                                     byte[] tmpState = LongToState(num);
-                                     MakeMoveForSmallDimension_K13(tmpState);
+                                    byte[] tmpState = LongToState(num);
+                                    MakeMoveForSmallDimension_K13(tmpState);
 
-                                 });
+                                });
 
-                                 if (toBreak) return currentDistance;
-                             }
-                             break;   */
+                                if (toBreak) return currentDistance;
+                            }
+                            break;
 
                         case HanoiType.K13e_01:
                         case HanoiType.K13e_12:
@@ -248,6 +245,7 @@ namespace HanoiTowersLukaKidric
 
                                 });
                                 if (toBreak) return currentDistance;
+                                // QueryGraph();
                             }
                             break;
                         case HanoiType.K4e_01:
@@ -337,8 +335,9 @@ namespace HanoiTowersLukaKidric
             return -2;
         }
         /*
-        private object queryGraph()
+        private object QueryGraph()
         {
+
             try
             {
                 bool toBreak = false;
@@ -353,14 +352,8 @@ namespace HanoiTowersLukaKidric
                     MakeMoveForSmallDimension_K13e(tmpState);
                     
                 });
-                if (toBreak) {
-                    return currentDistance;
-                }
-                else
-                {
-                    return currentDistance;
-                }
-                
+                if toBreak return currentDistance;
+      
             }
             catch (Exception ex)
             {
@@ -408,8 +401,6 @@ namespace HanoiTowersLukaKidric
 
         private void AddNewState(byte[] state, int disc, byte toPeg)
         {
-            Queue<long> XsetNew;
-            XsetNew = new Queue<long>();
             byte[] XnewState;
             XnewState = new byte[state.Length];
             for (int x = 0; x < state.Length; x++)
@@ -420,24 +411,25 @@ namespace HanoiTowersLukaKidric
             {
                 lock (setNew)
                 {
-                    XsetNew.Enqueue(XcurrentState);
+                    setNew.Enqueue(XcurrentState);
                 }
             }
         }
 
         private void MakeMoveForSmallDimension_K13(byte[] state)
         {
-            ResetArray(canMoveArray);
+            bool[] K13FastCanMoveArray = new bool[this.numPegs];
+            ResetArray(K13FastCanMoveArray);
 
             for (int i = 0; i < numDiscs; i++)
             {
-                if (canMoveArray[state[i]])
+                if (K13FastCanMoveArray[state[i]])
                 {
                     if (state[i] == 0)
                     {
                         for (byte j = 1; j < numPegs; j++)
                         {
-                            if (canMoveArray[j])
+                            if (K13FastCanMoveArray[j])
                             {
                                 AddNewState(state, i, j);
                             }
@@ -445,13 +437,13 @@ namespace HanoiTowersLukaKidric
                     }
                     else // From other vertices we can only move to center
                     {
-                        if (canMoveArray[0])
+                        if (K13FastCanMoveArray[0])
                         {
                             AddNewState(state, i, 0);
                         }
                     }
                 }
-                canMoveArray[state[i]] = false;
+                K13FastCanMoveArray[state[i]] = false;
             }
         }
 

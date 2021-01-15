@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\lukak\\.nuget\\packages\\": {}
+    "C:\\Users\\lki\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lukak\\source\\repos\\RST-MAG-Programiranje_HanoiTowers\\HanoiTowersLukaKidric\\HanoiTowersLukaKidric.csproj",
+      "projectUniqueName": "C:\\Users\\lki\\RST-MAG-Programiranje_HanoiTowers\\HanoiTowersLukaKidric\\HanoiTowersLukaKidric.csproj",
       "projectName": "HanoiTowersLukaKidric",
-      "projectPath": "C:\\Users\\lukak\\source\\repos\\RST-MAG-Programiranje_HanoiTowers\\HanoiTowersLukaKidric\\HanoiTowersLukaKidric.csproj",
-      "packagesPath": "C:\\Users\\lukak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lukak\\source\\repos\\RST-MAG-Programiranje_HanoiTowers\\HanoiTowersLukaKidric\\obj\\",
+      "projectPath": "C:\\Users\\lki\\RST-MAG-Programiranje_HanoiTowers\\HanoiTowersLukaKidric\\HanoiTowersLukaKidric.csproj",
+      "packagesPath": "C:\\Users\\lki\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lki\\RST-MAG-Programiranje_HanoiTowers\\HanoiTowersLukaKidric\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lukak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lki\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

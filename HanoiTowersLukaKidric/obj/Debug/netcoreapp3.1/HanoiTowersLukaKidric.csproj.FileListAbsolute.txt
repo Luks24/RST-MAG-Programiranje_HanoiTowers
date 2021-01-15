@@ -24,3 +24,14 @@ C:\Users\lukak\Source\Repos\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKid
 C:\Users\lukak\Source\Repos\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.dll
 C:\Users\lukak\Source\Repos\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.pdb
 C:\Users\lukak\Source\Repos\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.genruntimeconfig.cache
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.csprojAssemblyReference.cache
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.AssemblyInfoInputs.cache
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.AssemblyInfo.cs
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.dll
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\obj\Debug\netcoreapp3.1\HanoiTowersLukaKidric.pdb
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\bin\Debug\netcoreapp3.1\HanoiTowersLukaKidric.exe
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\bin\Debug\netcoreapp3.1\HanoiTowersLukaKidric.deps.json
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\bin\Debug\netcoreapp3.1\HanoiTowersLukaKidric.runtimeconfig.json
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\bin\Debug\netcoreapp3.1\HanoiTowersLukaKidric.runtimeconfig.dev.json
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\bin\Debug\netcoreapp3.1\HanoiTowersLukaKidric.dll
+C:\Users\lki\RST-MAG-Programiranje_HanoiTowers\HanoiTowersLukaKidric\bin\Debug\netcoreapp3.1\HanoiTowersLukaKidric.pdb
