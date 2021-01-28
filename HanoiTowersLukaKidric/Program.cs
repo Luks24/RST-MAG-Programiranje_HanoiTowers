@@ -1,6 +1,5 @@
 ﻿using HanoiTowersLukaKidric;
 using HanoiTowersLukaKidric.Core;
-using HanoiTowersLukaKidric.TypeFactory;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ namespace PodatkovneStrukture
         {
             // Uporabnik izbere tip hanoiskega stolpa, ki ga shranimo v spremnljivko
             Console.WriteLine("Hanoi example ");
-            HanoiType type = HanoiTowerModel.SelectHanoiType();
+            HanoiType type = HanoiTypeModel.SelectHanoiType();
 
             // Uporabnik napiše število diskov, ki jih parsamo v int
             Console.Write("Enter number of discs: ");
@@ -30,8 +29,11 @@ namespace PodatkovneStrukture
             // Ustvarimo novi objekt tipa Hanoi, kateremu podamo prej določene spremnljivke
             //HanoiTowerSelection hanBasic = new HanoiTowerSelection(k, numPegs, type);
             // Na našem objektu kličemo funkcijo za določanje najkrajše poti
-            HanoiTowerFactory factory = null;
-            switch (type)
+           // HanoiTowerFactory factory = null;
+            HanoiTowerFactory factory2 = new HanoiTowerFactory();
+            int length = factory2.HanoiTowerFactoryGet(k, numPegs, type);
+            //type.HanoiTowerFactory();
+           /* switch (type)
             {
                 case HanoiType.K13_01:
                     {
@@ -75,7 +77,7 @@ namespace PodatkovneStrukture
                     }
                     break;
             }
-            var length = factory.ProcessHanoiTowers(0, out _);
+            //var length = factory.ProcessHanoiTowers(0, out _);*/
 
             Console.WriteLine();
             Console.WriteLine($"\n\nDimension: {k} ; Steps:  {length} ; Time {sw.Elapsed.TotalSeconds}");

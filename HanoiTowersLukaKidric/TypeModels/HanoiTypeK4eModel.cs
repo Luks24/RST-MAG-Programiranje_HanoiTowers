@@ -6,15 +6,15 @@ using System.Text;
 
 namespace HanoiTowersLukaKidric.TypeModels
 {
-    class HanoiTypeK4eModel : HanoiTowerModel
+    class HanoiTypeK4eModel : HanoiTypeModel
     {
-        public HanoiTypeK4eModel(int numDiscs, int numPegs, HanoiType type)
+        public HanoiTypeK4eModel(int numDiscs, int numPegs, HanoiType type) : base(numDiscs, numPegs, type)
         {
             this.numDiscs = numDiscs;
             this.numPegs = numPegs;
             this.type = type;
         }
-        public int ShortestPathForSmallDimension(int searchMode, out string path)
+        /*public int ShortestPathForSmallDimension(int searchMode, out string path)
         {
             long finalState = 0;
 
@@ -116,8 +116,8 @@ namespace HanoiTowersLukaKidric.TypeModels
             }
             return -2;
 
-        }
-        private void MakeMoveForSmallDimension_K4e(byte[] state)
+        }*/
+        public override void MakeMoveForSmallDimension(byte[] state)
         {
             bool[] K4eCanMoveArray = new bool[this.numPegs];
             ResetArray(K4eCanMoveArray);
